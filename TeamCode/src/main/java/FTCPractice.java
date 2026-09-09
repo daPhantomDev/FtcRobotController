@@ -1,2 +1,4 @@
-public class FTCPractice {
+public class FTCPractice
+{
+    
 }
