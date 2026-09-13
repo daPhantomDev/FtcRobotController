@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.mechanism;
+package org.firstinspires.ftc.teamcode.Practice.mechanism;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -9,6 +9,7 @@ public class ServoPractice {
 
 
     public void init(HardwareMap hwMap) {
+
         servo_pos = hwMap.get(Servo.class, "servo1_pos");
     }
 

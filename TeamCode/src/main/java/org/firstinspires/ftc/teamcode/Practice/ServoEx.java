@@ -1,9 +1,9 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Practice;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-import org.firstinspires.ftc.teamcode.mechanism.ServoPractice;
+import org.firstinspires.ftc.teamcode.Practice.mechanism.ServoPractice;
 
 @TeleOp
 public class ServoEx extends OpMode {
