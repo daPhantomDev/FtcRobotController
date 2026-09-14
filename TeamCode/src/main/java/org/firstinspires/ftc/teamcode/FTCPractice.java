@@ -16,7 +16,7 @@ public class FTCPractice extends OpMode {
     public void init() {
         Moter1 = hardwareMap.get(DcMotor.class, "moter1");
         Servo1 = hardwareMap.get(Servo.class, "servo1");
-        telemetry.addData("Hello", "Will");
+        telemetry.addData("Hello", "Will ss");
     }
 
     @Override
