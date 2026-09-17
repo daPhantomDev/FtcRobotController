@@ -10,6 +10,13 @@ public class m_MoterPractice1 {
 
         Moter1 = hwMap.get(DcMotor.class, "moter1");
         Moter1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+    }
 
+    public void setMoterSpd(double spd) {
+        if (spd > 1 || spd < -1) {
+            Moter1.setPower(spd);
+        }
+        throw new RuntimeException("A robots speed cannot be over 1 or -1");
     }
 }
+
