@@ -18,7 +18,13 @@ public class BasicMoterControl extends LinearOpMode {
 
         Moter1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        Moter1.setTargetPosition((int)-yVel);
-        Moter2.setTargetPosition((int)-xVel);
+        if(gamepad1.aWasPressed()) {
+            Moter1.setPower(-yVel);
+            Moter2.setPower(-xVel);
+        }
+        else if(gamepad1.backWasPressed()) {
+            Moter1.setPower(-yVel * 0.5);
+            Moter2.setPower(-xVel * 0.5);
+        }
     }
 }
