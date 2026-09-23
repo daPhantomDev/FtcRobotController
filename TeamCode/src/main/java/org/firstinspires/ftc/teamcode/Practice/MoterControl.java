@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.Practice;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-public class BasicMoterControl extends LinearOpMode {
+public class MoterControl extends LinearOpMode {
 
     private DcMotor Moter1;
     //private DcMotor Moter2;
