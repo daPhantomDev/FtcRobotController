@@ -19,4 +19,3 @@ public class m_MoterPractice1 {
         throw new RuntimeException("A robots speed cannot be over 1 or -1");
     }
 }
-
