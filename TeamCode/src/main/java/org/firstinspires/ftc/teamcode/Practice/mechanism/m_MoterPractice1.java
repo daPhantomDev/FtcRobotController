@@ -16,6 +16,9 @@ public class m_MoterPractice1 {
         if (spd > 1 || spd < -1) {
             Moter1.setPower(spd);
         }
-        throw new RuntimeException("A robots speed cannot be over 1 or -1");
+        else {
+            throw new RuntimeException("A robots speed cannot be over 1 or -1");
+        }
+
     }
 }
