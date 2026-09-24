@@ -1,4 +1,15 @@
 package org.firstinspires.ftc.teamcode.Practice;
 
-public class MoterPractice1 {
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+
+public class MoterPractice1 extends OpMode {
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public void loop() {
+
+    }
 }
