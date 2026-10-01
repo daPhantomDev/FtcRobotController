@@ -4,11 +4,12 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp
-public class kSTuner  extends OpMode {
-
+public class kVTuner extends OpMode {
     FlyWheel flywheel = new FlyWheel();
 
+    public double kV = 0.00085;
     public double kS = 0.05;
+    public double goalRPM = 900;
     double[] increments = {0.000001, 0.00001, 0.0001, 0.001, 0.01};
     int incrementIndx = 4;
 
@@ -25,16 +26,23 @@ public class kSTuner  extends OpMode {
             incrementIndx--;
         }
 
+        if(gamepad1.a) {
+            goalRPM = 700;
+        } else if (gamepad1.b) {
+            goalRPM = 900;
+        }
+
         double currentStep = increments[incrementIndx];
 
-        if(gamepad1.dpadUpWasPressed()) {kS += currentStep;}
-        if(gamepad1.dpadDownWasPressed()) {kS -= currentStep;}
-            
+        if(gamepad1.dpadUpWasPressed()) {kV += currentStep;}
+        if(gamepad1.dpadDownWasPressed()) {kV -= currentStep;}
 
-        flywheel.setMotorPwr(kS);
+        double pwr = (kV * goalRPM) + kS;
+
+        flywheel.setMotorPwr(pwr);
 
         telemetry.addData("Step", "%.6f", currentStep);
-        telemetry.addData("kS", "%.6f", kS);
+        telemetry.addData("kV", "%.6f", kV);
         telemetry.addData("TPS", flywheel.getTPS());
         telemetry.addData("RPM", flywheel.getRPM());
 
