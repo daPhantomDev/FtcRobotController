@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.FlyWeelPract;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.VoltageSensor;
 
 @TeleOp
 public class kPTuner extends OpMode {
@@ -9,7 +10,7 @@ public class kPTuner extends OpMode {
 
     public double kV = 0.00080;
     public double kS = 0.05;
-    public double kP = 0.0;
+    public double kP = 0.01;
     public double goalRPM = 900;
     double[] increments = {0.000001, 0.00001, 0.0001, 0.001, 0.01};
     int incrementIndx = 4;
@@ -52,6 +53,7 @@ public class kPTuner extends OpMode {
         telemetry.addData("TPS", flywheel.getTPS());
         telemetry.addData("RPM", flywheel.getRPM());
         telemetry.addData("Goal RPM", goalRPM);
+        //telemetry.addData("Battery Voltage", "%.2f Volts", currentVoltage);
 
     }
 }
