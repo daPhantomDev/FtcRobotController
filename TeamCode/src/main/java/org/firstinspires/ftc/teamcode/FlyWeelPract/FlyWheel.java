@@ -10,7 +10,7 @@ public class FlyWheel {
 
     private double encoderCPM = 28;
     //private double encoderCPR = 141.6;
-    private double gearRatio = 5.1;
+    private double gearRatio = 1;
     private double kV = 0.00085, kS = 0.05, kP = 0.01;
     public void init(HardwareMap hwMap) {
         m1 = hwMap.get(DcMotorEx.class, "leftMotor");
