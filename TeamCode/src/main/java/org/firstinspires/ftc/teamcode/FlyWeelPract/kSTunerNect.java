@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp
-public class kSTuner  extends OpMode {
+public class kSTunerNect  extends OpMode {
 
     FlyWheel flywheel = new FlyWheel();
 

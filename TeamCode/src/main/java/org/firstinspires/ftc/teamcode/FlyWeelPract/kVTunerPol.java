@@ -9,8 +9,8 @@ import org.firstinspires.ftc.teamcode.OdometryPract.OdometryMechanism;
 public class kVTunerPol extends OpMode {
     FlyWheel flywheel = new FlyWheel();
 
-    public double kVPol = 0.00085;
-    public double kSPol = 0.05;
+    public double kVPol = 0.00000;
+    public double kSPol = 0.00;
     public double goalRPM = 2900;
     double[] increments = {0.000001, 0.00001, 0.0001, 0.001, 0.01};
     int incrementIndx = 4;

@@ -7,13 +7,13 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 
 @TeleOp
-public class kPTunerPoln extends OpMode {
+public class kPTunerNect extends OpMode {
     FlyWheels654 flywheel = new FlyWheels654();
 
 
-    public double kVPol = 0.00080;
-    public double kSPol = 0.05;
-    public double kPPol = 0.01;
+    public double kVPol = 0.00000;
+    public double kSPol = 0.00;
+    public double kPPol = 0.00;
     public double goalRPM = 900;
     double[] increments = {0.000001, 0.00001, 0.0001, 0.001, 0.01};
     int incrementIndx = 4;

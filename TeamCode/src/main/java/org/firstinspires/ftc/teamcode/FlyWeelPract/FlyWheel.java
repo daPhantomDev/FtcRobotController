@@ -23,17 +23,21 @@ public class FlyWheel {
 
     public void stopMoter() {m1.setPower(0);}
 
-    public void setMotorRPM(double tgtRpm) {
+    public void setMotorRPM(double goalRPM) {
         //Call every loop
-        double err = tgtRpm - getRPM();
-        double feedFwd = (kV * tgtRpm) + kS;
+        double err = goalRPM - getRPM();
+        double feedForward = (kV * goalRPM) + kS;
         double feedBack = (err * kP);
-        double pwr = feedFwd + feedBack;
+        double pwr = feedForward + feedBack;
         m1.setPower(pwr);
     }
 
+    public double getMotorPwr() {
+        return m1.getPower();
+    }
+
     public double getTPS() {
-        return m1.getVelocity();
+        return -m1.getVelocity();
     }
 
     public double getRPM() {

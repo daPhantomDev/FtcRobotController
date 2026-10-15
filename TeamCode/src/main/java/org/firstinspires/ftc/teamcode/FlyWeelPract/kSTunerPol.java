@@ -8,7 +8,7 @@ public class kSTunerPol  extends OpMode {
 
     FlyWheel flywheel = new FlyWheel();
 
-    public double kSPol = 0.05;
+    public double kSPol = 0.00;
     double[] increments = {0.000001, 0.00001, 0.0001, 0.001, 0.01};
     int incrementIndx = 4;
 

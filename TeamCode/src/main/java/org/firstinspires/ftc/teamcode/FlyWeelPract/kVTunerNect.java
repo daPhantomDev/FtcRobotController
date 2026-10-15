@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.firstinspires.ftc.teamcode.OdometryPract.OdometryMechanism;
 
 @TeleOp
-public class kVTuner extends OpMode {
+public class kVTunerNect extends OpMode {
     FlyWheel flywheel = new FlyWheel();
 
     public double kV = 0.00085;
@@ -29,9 +29,9 @@ public class kVTuner extends OpMode {
         }
 
         if(gamepad1.a) {
-            goalRPM = 700;
+            goalRPM = 2000;
         } else if (gamepad1.b) {
-            goalRPM = 900;
+            goalRPM = 2900;
         }
 
         double currentStep = increments[incrementIndx];
