@@ -4,15 +4,25 @@ import com.pedropathing.revhub.drivetrains.Mecanum;
 import com.pedropathing.revhub.localizers.PinpointLocalizer;
 import com.pedropathing.tuning.autotune.Procedure;
 import com.pedropathing.tuning.autotune.Tuner;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.pedro.procedures.ForesightTuner;
+import org.firstinspires.ftc.teamcode.pedro.procedures.MecanumTuner;
 import org.firstinspires.ftc.teamcode.pedro.procedures.PinpointTuner;
+import org.firstinspires.ftc.teamcode.pedro.procedures.Tests;
 import org.firstinspires.ftc.teamcode.pedro.procedures.TwoWheelTuner;
 
 public class Tuning {
     //654 Offset x = 3.425 y = 6.424 inches
+
+    public static double thing;
     @Tuner
-    public static Procedure pinpointTuner() {
-        return new PinpointTuner();
+    public static Procedure tests() {
+        return new Tests(hardwareMap -> new Mecanum(hardwareMap, Constants.drivetrainConfig), null, null);
     }
+
+//    @Tuner
+//    public static Procedure pinpointTuner() {
+//        return new PinpointTuner();
+//    }
 }

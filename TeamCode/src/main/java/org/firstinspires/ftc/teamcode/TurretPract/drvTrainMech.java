@@ -18,7 +18,7 @@ public class drvTrainMech {
         m_FL = hwMap.get(DcMotorEx.class, "frontLeft_Drive");
         m_BL = hwMap.get(DcMotorEx.class, "backLeft_Drive");
         m_FR = hwMap.get(DcMotorEx.class, "frontRight_Drive");
-        m_BR = hwMap.get(DcMotorEx.class, "backLeft_Drive");
+        m_BR = hwMap.get(DcMotorEx.class, "backRight_Drive");
 
         m_FL.setDirection(DcMotor.Direction.REVERSE);
         m_BL.setDirection(DcMotor.Direction.REVERSE);

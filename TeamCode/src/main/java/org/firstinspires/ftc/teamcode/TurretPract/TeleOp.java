@@ -2,6 +2,8 @@ package org.firstinspires.ftc.teamcode.TurretPract;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
+import org.firstinspires.ftc.teamcode.ROBOGO.drvTrainMech;
+
 @com.qualcomm.robotcore.eventloop.opmode.TeleOp
 public class TeleOp extends OpMode {
 
@@ -17,9 +19,9 @@ public class TeleOp extends OpMode {
     public void loop() {
         mech.drive(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
 
-        if(gamepad1.left_stick_y == 0 && gamepad1.left_stick_x == 0 && gamepad1.right_stick_x == 0) {
-            mech.stop();
-        }
+//        if(gamepad1.left_stick_y == 0 && gamepad1.left_stick_x == 0 && gamepad1.right_stick_x == 0) {
+//            mech.stop();
+//        }
 
         if(gamepad1.a) {
             wheel.setMotorRPMNect(900);
