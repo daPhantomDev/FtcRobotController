@@ -8,9 +8,16 @@ import com.pedropathing.api.PoseFactory;
 import com.pedropathing.math.Pose;
 import static com.pedropathing.api.Paths.*;
 import com.pedropathing.paths.Path;
-//import com.pedropathing.ivy.Scheduler;
-//import static com.pedropathing.ivy.Scheduler.schedule;
-//import static com.pedropathing.ivy.pedro.PedroCommands.follow;
+import com.pedropathing.ivy.Scheduler;
+import static com.pedropathing.ivy.Scheduler.schedule;
+import static com.pedropathing.ivy.pedro.PedroCommands.follow;
+import com.pedropathing.ivy.Command;
+import com.pedropathing.ivy.Scheduler;
+import static com.pedropathing.ivy.Scheduler.schedule;
+import static com.pedropathing.ivy.groups.Groups.sequential;
+import static com.pedropathing.ivy.pedro.PedroCommands.follow;
+
+import java.util.concurrent.ConcurrentMap;
 
 @Autonomous
 public class follower extends OpMode {
@@ -18,27 +25,46 @@ public class follower extends OpMode {
     private Follower follower;
     private final PoseFactory p = PoseFactory.degrees();
     private final Pose startPose = p.of(37, 14, 90);
+    private final Pose scorePose = p.of()
     private final Pose park = p.of(10, 104, 180);
-    private final Pose controlPose = p.of(34, 89, 135);
+    private final Pose controlPose = p.of(19, 41, 0);
 
     //Functions
     private Path park() {
-        return line(startPose, park).linear(startPose, park);
+        return curve(scorePose, controlPose, park).linear(scorePose, park);
+    }
+    private Path goToScore() {return line(startPose, scorePose).linear(startPose, scorePose);}
+
+    private Command autoRoutine() {
+        return sequential(
+                follow(follower, goToScore()),
+                follow(follower, park())
+        );
     }
 
     @Override
     public void init() {
+        Scheduler.reset();
+
         follower = Constants.create(hardwareMap);
         follower.setPose(startPose);
+        follower.update();
     }
 
     @Override
     public void start() {
-
+        schedule(autoRoutine());
     }
 
     @Override
     public void loop() {
+        follower.update();
+        Scheduler.execute();
 
+        telemetry.addData("X: ", follower.pose().x());
+        telemetry.addData("Y: ", follower.pose().y());
+        telemetry.addData("Heading: ", Math.toDegrees(follower.pose().heading()));
+        telemetry.addData("Follower Mode: ", follower.mode());
+        telemetry.update();
     }
 }
