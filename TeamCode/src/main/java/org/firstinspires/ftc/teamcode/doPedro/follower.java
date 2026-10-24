@@ -25,7 +25,7 @@ public class follower extends OpMode {
     private Follower follower;
     private final PoseFactory p = PoseFactory.degrees();
     private final Pose startPose = p.of(37, 14, 90);
-    private final Pose scorePose = p.of()
+    private final Pose scorePose = p.of(37, 20, 90);
     private final Pose park = p.of(10, 104, 180);
     private final Pose controlPose = p.of(19, 41, 0);
 
